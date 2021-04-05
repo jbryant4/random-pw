@@ -34,35 +34,32 @@ function fillContent() {
     alert("You must choose at least one!");
     fillContent();
   }
- return password_content;
+  return password_content;
 }
 
 
 
 // Create function to prompt password length 
 function generatePassword() {
-
+  
   var password_length = window.prompt("How long would you like your password to be? Please pick a number between 8 and 128.");
   password_length = parseInt(password_length);
 
   if (password_length >= 8 && password_length <= 128) {
-
     password_content = fillContent();
-    console.log(password_content)
+    var passwordFinished = []
+
+    for (i = 0; i < password_length; i++) {
+
+      passwordFinished[i] = password_content[Math.floor(Math.random() * password_content.length)]
+    }
+
+    passwordFinished = passwordFinished.join("");
+
+    return passwordFinished
   } else {
-
-    generatePassword();
+     return generatePassword();
   }
-  var passwordFinished = []
-
-  for (i = 0; i < password_length; i++) {
-
-    passwordFinished[i] = password_content[Math.floor(Math.random() * password_content.length)]
-  }
-
-  passwordFinished = passwordFinished.join("");
-
-  return passwordFinished
 
 }
 
