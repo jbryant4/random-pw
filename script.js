@@ -41,7 +41,7 @@ function fillContent() {
 
 // Create function to prompt password length 
 function generatePassword() {
-  
+
   var password_length = window.prompt("How long would you like your password to be? Please pick a number between 8 and 128.");
   password_length = parseInt(password_length);
 
@@ -58,7 +58,7 @@ function generatePassword() {
 
     return passwordFinished
   } else {
-     return generatePassword();
+    return generatePassword();
   }
 
 }
